@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <nav class="nav" id="nav">
+    <div class="default-nav">
+      <div class="main-nav">
+        <div class="toggle circle"></div>
+        <div class="main-nav-item">Kabeela</div>
+        <div class="options"></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="inner" id="inner">
+    <div class="content" id="content" #iterableDiv>
+  <div *ngFor="let item of message">
+      <div class="message-wrapper them">
+        <img class="circle-wrapper" [src]="item.imagesrc"/>
+        <div class="text-wrapper">{{item.message}}</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="bottom" id="bottom">
+    <textarea class="input" #msgInput id="input" (keyup.enter)="emitMessage(msgInput.value)" (input)="userTyping()"></textarea>
+    <div class="send" id="send" (click)="emitMessage(msgInput.value)"></div>
+  </div>
+</div>
